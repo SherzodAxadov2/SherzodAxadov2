@@ -1,21 +1,21 @@
 name: DevCard
 
-permissions: 
+permissions:
   contents: write
 
-on: 
+on:
   workflow_dispatch:
   push:
     branches:
-     - main
+      - main
   schedule:
-   - cron: "0 0 * * *"
+    - cron: "0 0 * * *"
 
 jobs:
   devcard:
-    runs-on: ubuntu latest
+    runs-on: ubuntu-latest
     steps:
       - name: devcard
         uses: dailydotdev/action-devcard@2.0.2
-        with: 
+        with:
           devcard_id: ${{ secrets.DEVCARD_ID }}
